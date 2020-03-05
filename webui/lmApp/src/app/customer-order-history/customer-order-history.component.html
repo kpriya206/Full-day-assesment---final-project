@@ -1,0 +1,23 @@
+<p>customer-order-history works!</p>
+<table border="3">
+        <tr>
+            <th>ORDER ID</th>
+            <th>ORDER AMOUNT</th>
+            <th>ORDER STATUS</th>
+            <th>ORDER QUANTITY</th>
+            <th>CUSTOMER ID</th>
+            <th>FOOD ID</th>
+            <th>VENDOR ID</th>
+            
+
+        </tr>
+        <tr *ngFor="let u of orders | async">
+            <td>{{u.ordId}}</td>
+            <td>{{u.ordTotalCost}}</td>
+            <td>{{u.ordStatus}}</td> 
+            <td>{{u.ordQty}}</td> 
+            <td>{{u.cusId}}</td>
+            <td>{{u.foodId}}</td>
+            <td>{{u.venId}}</td>
+        </tr>
+    </table>

@@ -1,0 +1,15 @@
+<style>
+    .ven{
+        font-style:italic ;
+        font-size: larger;
+        background-color: burlywood;
+    }
+</style>
+<div class="ven"><p>customer-info works!</p>
+
+Customer Id :    {{(customer | async)?.cusId}} <br/>
+Customer Name :  {{(customer | async)?.cusName}}  <br/>
+Customer Password : {{(customer | async)?.cusPassword}}  <br/>
+Customer Wallet : {{(customer | async)?.cusWallet}}<br/>
+Customer Email : {{(customer | async)?.cusEmail}}  <br/>
+</div>

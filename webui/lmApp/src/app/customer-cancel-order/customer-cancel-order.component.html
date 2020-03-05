@@ -1,0 +1,35 @@
+<p>customer-cancel-order works!</p>
+<style>input[type=text], input[type=number],input[type=button],input[type=string],select {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=button]:hover {
+  background-color: aqua;
+}
+.bg-img {
+  /* The image used */
+  background-image: url("https://serving.photos.photobox.com/012593208697250222198be9891b1b750fafb8bc5a20b12ad2bdd2c8d00d923697f8200f.jpg");
+
+ height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+</style>
+<form name= "customercancelorder" class="bg-img">
+    Customer Id :
+    <input type="number" name ="cusId" [(ngModel)]="cusId"/> <br/> <br/>
+    Status :
+    <input type="text" name ="status" [(ngModel)]="status"/> <br/><br/>
+    <input type="button" value="Cancel Order" (click)="cancel()" /> <br/><br/>
+
+    {{result}}
+</form>

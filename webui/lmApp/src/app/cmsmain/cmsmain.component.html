@@ -1,0 +1,24 @@
+
+<style>
+
+h1{              
+        text-align: center;
+        color: rgb(54, 181, 204);
+  }
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+}
+</style>
+ <h1 style="font-style:oblique;">MAD FOODIES</h1>
+
+
+<button style="min-width: auto;"><a  [routerLink]="['/cms-main',
+ {outlets: {'data': ['vendor-login']}}]">Vendor Login</a></button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button><a  [routerLink]="['/cms-main',
+ {outlets: {'data': ['customer-login']}}]">Customer Login</a></button> &nbsp;&nbsp;&nbsp;&nbsp;
+ <br/><br/> 
+<router-outlet name='data'></router-outlet>

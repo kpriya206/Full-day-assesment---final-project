@@ -1,0 +1,69 @@
+<p>PLACE ORDER WORKS!</p>
+<style>input[type=text], input[type=number],input[type=button],input[type=string],select {
+    width: 18%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+input[type=button]:hover {
+  background-color: aqua;
+}
+.bg-img {
+  /* The image used */
+  background-image: url("https://serving.photos.photobox.com/86796039fc339dfe20bb749098d04245f76c635e23a16f0d8753989fd5c29b8d8d05a8b0.jpg");
+
+ height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+input[type=button]:hover {
+  background-color: aqua;
+}
+</style>
+<form name="placeOrder" class="bg-img">
+
+    <label style="color: aqua;">Customer Id:</label>
+    <input type="number" [(ngModel)]="model.cusId" name="cusId"  />  <br/> <br/> <br/> 
+    <label style="color: aqua;">Select Menu Item:</label>
+    <select [(ngModel)]="menu.foodName" name="foodName" (change)="showAmount()">
+        <option *ngFor="let e of menuList | async" value={{e.foodId}}>
+            {{e.foodName}}
+        </option>
+    </select> <br/><br/> 
+    <label style="color: aqua;">Quantity of Order:</label>
+    <input type="number" [(ngModel)]="model.ordQty" name="ordQty" /> <br/><br/> 
+    <label style="color: aqua;">Price:</label>
+    <input type="number" name="price" [(ngModel)]="price" readonly /> <br/><br/>
+    <!-- Order Total Cost :
+    <input type="number" [(ngModel)]="ordTotalCost" name="ordTotalCost" /> <br/><br/>  -->
+    <label style="color: aqua;">Order Date:</label>
+    <input type="date" [(ngModel)]="model.ordDate" name="ordDate" /> <br/><br/>
+    <label style="color: aqua;">Select Vendor:</label> 
+    <select [(ngModel)]="vendor.venId" name="venId">
+        <option *ngFor="let f of vendorList | async" value={{f.venId}}>
+            {{f.venId}}
+        </option>
+    </select> <br/><br/>
+   <!--  Select Wallet Type :   
+    <select [(ngModel)]="wallet.walType" name="walType">
+        <option *ngFor="let f of walletList | async" value={{f.walType}}>
+            {{f.walType}}
+        </option>
+    </select> <br/><br/> -->
+    <label style="color: aqua;">Coupon Code:</label>
+    <input type ="string" [(ngModel)]="model.couponCode" name ="couponCode" /> <br><br/>
+    <label style="color: aqua;">Order Token:</label>
+    <input type ="number" [(ngModel)]="model.tokenNo" name ="tokenNo" /> <br><br/>
+   <!--  Order Comments  :
+    <input type="text" [(ngModel)]="model.ordComments" name="ordComments" /> <br/><br/>  -->
+    
+    <input type="button" value="Place Order" (click)=placeOrder() />   <br/><br/> 
+    {{result}}
+</form>

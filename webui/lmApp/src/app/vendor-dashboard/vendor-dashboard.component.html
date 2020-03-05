@@ -1,0 +1,14 @@
+<h1>Welcome Vendor {{userName}} </h1>
+<app-vendor-info></app-vendor-info> 
+<br/> 
+<button style="background-color: khaki;"><a  [routerLink]="['/vendor-dashboard',
+ {outlets: {'data': ['vendor']}}]">Vendor Details</a></button> &nbsp;&nbsp;&nbsp;&nbsp;
+ <!-- <a  [routerLink]="['/vendor-dashboard',
+ {outlets: {'data': ['pending-orders-vendor']}}]">Vendor Pending Orders</a> &nbsp;&nbsp;&nbsp;&nbsp; -->
+ <button style="background-color: khaki;"><a  [routerLink]="['/vendor-dashboard',
+ {outlets: {'data': ['vendor-acceptedor-rejected-order']}}]">Accept or Reject Order</a></button> &nbsp;&nbsp;&nbsp;&nbsp;
+<!-- <app-place-order></app-place-order> -->
+<!-- <app-vendor></app-vendor> -->
+<!-- <app-wallet></app-wallet>  -->
+<br/><br/> 
+<router-outlet name='data'></router-outlet>

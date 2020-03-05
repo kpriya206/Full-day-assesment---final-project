@@ -1,0 +1,13 @@
+<style>
+    .ven{
+        font-style:italic ;
+        font-size: larger;
+        background-color: burlywood;
+    }
+</style>
+<div class="ven"><p><b>vendor-info works!</b></p>
+Vendor Id :    {{(vendor | async)?.venId}} <br/>
+Vendor Name :  {{(vendor | async)?.venName}}  <br/>
+vendor Balance : {{(vendor | async)?.venBal}}  <br/>
+vendor Password : {{(vendor | async)?.venPassword}}<br/>
+</div>

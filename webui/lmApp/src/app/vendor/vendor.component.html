@@ -1,0 +1,15 @@
+<table border="3">
+  <tr>
+      <th>Vendor ID</th>
+      <th>Vendor Name</th>
+      <th>Vendor Balance</th>
+      <th>Vendor Password</th>
+  </tr>
+  <tr *ngFor="let u of vendor | async">
+      <td>{{u.venId}}</td>
+      <td>{{u.venName}}</td>
+      <td>{{u.venBal}}</td>
+      <td>{{u.venPassword}}</td>
+  </tr>
+</table>
+<br/><br/>
